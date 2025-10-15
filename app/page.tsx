@@ -64,7 +64,7 @@ export default function LosNietosLanding() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-5xl font-extrabold mb-4 text-green-700"
+            className="text-5xl font-extrabold mb-4 text-black/90"
           >
             Materiales de construcción con historia y calidad
           </motion.h2>
@@ -82,7 +82,7 @@ export default function LosNietosLanding() {
       {/* Carrusel automático de marcas */}
       <section className="py-10 bg-white border-t border-b border-neutral-200 overflow-hidden">
         <div className="flex flex-col items-center mb-8">
-          <h3 className="text-3xl font-extrabold text-green-700 relative inline-block">
+          <h3 className="text-3xl font-extrabold text-black/90 relative inline-block">
             Trabajamos con las mejores marcas
             <span className="absolute left-0 bottom-[-6px] w-full h-[4px] bg-orange-500 rounded-full"></span>
           </h3>
@@ -124,7 +124,7 @@ export default function LosNietosLanding() {
       <section id="productos" className="py-20 px-8 bg-white text-center">
         <div className="flex justify-center items-center gap-3 mb-2">
           <ShoppingCart className="text-orange-500" size={32} />
-          <h3 className="text-3xl font-extrabold text-green-700 relative inline-block">
+          <h3 className="text-3xl font-extrabold text-black relative inline-block">
             Nuestros Productos Estrella
             <span className="absolute left-0 bottom-[-6px] w-full h-[4px] bg-green-600 rounded-full"></span>
           </h3>
@@ -225,7 +225,7 @@ export default function LosNietosLanding() {
       <section id="servicios" className="py-20 px-8 bg-yellow-50 text-center">
         <div className="flex justify-center items-center gap-3 mb-2">
           <Hammer className="text-orange-500" size={32} />
-          <h3 className="text-3xl font-extrabold text-green-700 relative inline-block">
+          <h3 className="text-3xl font-extrabold text-black relative inline-block">
             Lo Que Ofrecemos
             <span className="absolute left-0 bottom-[-6px] w-full h-[4px] bg-orange-500 rounded-full"></span>
           </h3>
@@ -268,7 +268,7 @@ export default function LosNietosLanding() {
       <section className="py-20 px-8 bg-green-50 text-center">
         <div className="flex justify-center items-center gap-3 mb-2">
           <Handshake className="text-green-600" size={32} />
-          <h3 className="text-3xl font-extrabold text-green-700 relative inline-block">
+          <h3 className="text-3xl font-extrabold text-black relative inline-block">
             Nuestra Trayectoria y Compromiso
             <span className="absolute left-0 bottom-[-6px] w-full h-[4px] bg-green-600 rounded-full"></span>
           </h3>
@@ -303,7 +303,7 @@ export default function LosNietosLanding() {
               <div className="flex justify-center mb-4">
                 <Icon className="text-green-600" size={48} />
               </div>
-              <h4 className="text-xl font-semibold mb-3 text-green-700">
+              <h4 className="text-xl font-semibold mb-3 text-black">
                 {title}
               </h4>
               <p className="text-neutral-700 text-sm">{desc}</p>
@@ -316,7 +316,7 @@ export default function LosNietosLanding() {
       <section id="contacto" className="py-20 px-8 bg-white text-center">
         <div className="flex justify-center items-center gap-3 mb-2">
           <Mail className="text-green-600" size={32} />
-          <h3 className="text-3xl font-extrabold text-green-700 relative inline-block">
+          <h3 className="text-3xl font-extrabold text-black relative inline-block">
             Hablemos de Tu Proyecto
             <span className="absolute left-0 bottom-[-6px] w-full h-[4px] bg-orange-500 rounded-full"></span>
           </h3>
@@ -327,7 +327,7 @@ export default function LosNietosLanding() {
         </p>
 
         <div className="max-w-md mx-auto text-left bg-yellow-50 p-8 rounded-2xl border border-neutral-200 shadow-sm">
-          <h4 className="text-xl font-semibold mb-6 text-center text-green-700">
+          <h4 className="text-xl font-semibold mb-6 text-center text-black">
             Formulario de Consulta
           </h4>
           <form className="space-y-4">
