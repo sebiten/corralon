@@ -21,59 +21,138 @@ export default function LosNietosLanding() {
   return (
     <div className="min-h-screen bg-white text-neutral-900 font-sans">
       {/* Header */}
-      <header className="flex justify-between items-center px-8 py-4 border-b border-neutral-200 bg-white sticky top-0 z-50">
-        <div className="flex items-center space-x-3">
-          <Image
-            src="/logo-nietos-bg.png"
-            alt="Los Nietos de Carlos Sánchez SRL"
-            width={100}
-            height={70}
-            className="rounded"
-          />
+      <header className="border-b border-neutral-200 bg-white sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          {/* Logo */}
+          <div className="flex items-center space-x-3">
+            <Image
+              src="/logo-nietos-bg.png"
+              alt="Los Nietos de Carlos Sánchez SRL"
+              width={100}
+              height={70}
+              className="rounded w-auto h-12 sm:h-16"
+            />
+          </div>
+
+          {/* Menú en desktop */}
+          <nav className="hidden md:flex space-x-6 text-sm font-medium items-center">
+            <a href="#productos" className="hover:text-orange-600 transition">
+              Inicio
+            </a>
+            <a href="#servicios" className="hover:text-orange-600 transition">
+              Sobre Nosotros
+            </a>
+            <a href="#contacto" className="hover:text-orange-600 transition">
+              Contacto
+            </a>
+            <a
+              href="#contacto"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white text-sm sm:text-base px-4 py-2 rounded-xl shadow-md transition"
+            >
+              Quiero un presupuesto
+            </a>
+          </nav>
+
+          {/* Botón hamburguesa */}
+          <div className="md:hidden flex items-center">
+            <button
+              id="menu-toggle"
+              className="text-green-700 focus:outline-none focus:ring-2 focus:ring-orange-500 rounded-md p-1"
+              onClick={() => {
+                const menu = document.getElementById("mobile-menu");
+                if (menu) menu.classList.toggle("hidden");
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="w-8 h-8"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
-        <nav className="space-x-6 text-sm font-medium">
-          <a href="#productos" className="hover:text-orange-600 transition">
+
+        {/* Menú móvil */}
+        <div
+          id="mobile-menu"
+          className="hidden flex flex-col items-center space-y-4 pb-6 md:hidden border-t border-neutral-200 bg-white text-sm font-medium"
+        >
+          <a
+            href="#productos"
+            className="pt-4 hover:text-orange-600 transition"
+            onClick={() =>
+              document.getElementById("mobile-menu")?.classList.add("hidden")
+            }
+          >
             Inicio
           </a>
-          <a href="#servicios" className="hover:text-orange-600 transition">
+          <a
+            href="#servicios"
+            className="hover:text-orange-600 transition"
+            onClick={() =>
+              document.getElementById("mobile-menu")?.classList.add("hidden")
+            }
+          >
             Sobre Nosotros
           </a>
-          <a href="#contacto" className="hover:text-orange-600 transition">
+          <a
+            href="#contacto"
+            className="hover:text-orange-600 transition"
+            onClick={() =>
+              document.getElementById("mobile-menu")?.classList.add("hidden")
+            }
+          >
             Contacto
           </a>
           <a
             href="#contacto"
-            className="inline-block bg-orange-500 hover:bg-orange-600 text-white text-lg px-6 py-3 rounded-xl shadow-md transition"
+            className="inline-block bg-orange-500 hover:bg-orange-600 text-white text-sm px-5 py-2 rounded-xl shadow-md transition"
+            onClick={() =>
+              document.getElementById("mobile-menu")?.classList.add("hidden")
+            }
           >
             Quiero un presupuesto
           </a>
-        </nav>
+        </div>
       </header>
 
       {/* Hero */}
-      <section className="relative flex justify-center items-center text-center py-34 bg-gradient-to-b from-yellow-50 to-white">
-        <Image
-          src="/logo-nietos-bg.png"
-          alt="Los Nietos de Carlos Sánchez SRL"
-          width={400}
-          height={70}
-          className="rounded"
-        />
-        <div className="flex flex-col w-1/3 mt-10">
+      <section className="relative flex flex-col md:flex-row justify-center items-center text-center md:text-left py-20 px-6 bg-gradient-to-b from-yellow-50 to-white gap-8">
+        <div className="flex justify-center md:justify-end w-full md:w-1/2">
+          <Image
+            src="/logo-nietos-bg.png"
+            alt="Los Nietos de Carlos Sánchez SRL"
+            width={400}
+            height={70}
+            className="rounded max-w-[250px] md:max-w-[400px] w-full h-auto"
+            priority
+          />
+        </div>
+
+        <div className="flex flex-col w-full md:w-1/2 mt-6 md:mt-0 items-center md:items-start">
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-5xl font-extrabold mb-4 text-black/90"
+            className="text-4xl sm:text-5xl font-extrabold mb-4 text-black/90 leading-tight"
           >
             Materiales de construcción con historia y calidad
           </motion.h2>
-          <p className="max-w-2xl text-neutral-700 mb-8">
+          <p className="text-neutral-700 mb-6 max-w-md md:max-w-lg">
             Somos una empresa familiar con más de 30 años en Ledesma, Jujuy,
             ofreciendo materiales de primera, asesoramiento técnico y atención
             personalizada.
           </p>
-          <Button className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-1 py-3 rounded-xl shadow-md">
+          <Button className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-5 py-3 rounded-xl shadow-md">
             Solicitar presupuesto
           </Button>
         </div>
@@ -81,12 +160,12 @@ export default function LosNietosLanding() {
 
       {/* Carrusel automático de marcas */}
       <section className="py-10 bg-white border-t border-b border-neutral-200 overflow-hidden">
-        <div className="flex flex-col items-center mb-8">
-          <h3 className="text-3xl font-extrabold text-black/90 relative inline-block">
+        <div className="flex flex-col items-center mb-8 px-4">
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-black/90 relative inline-block text-center">
             Trabajamos con las mejores marcas
             <span className="absolute left-0 bottom-[-6px] w-full h-[4px] bg-orange-500 rounded-full"></span>
           </h3>
-          <p className="text-neutral-600 mt-3 text-sm">
+          <p className="text-neutral-600 mt-3 text-sm sm:text-base text-center">
             Elegimos proveedores que garantizan calidad, durabilidad y
             confianza.
           </p>
@@ -94,25 +173,25 @@ export default function LosNietosLanding() {
 
         <div className="relative w-full overflow-hidden">
           <motion.div
-            className="flex gap-16 items-center"
+            className="flex gap-8 md:gap-16 items-center"
             animate={{ x: ["0%", "-50%"] }}
             transition={{
               repeat: Infinity,
-              duration: 20,
+              duration: 25,
               ease: "linear",
             }}
           >
-            {Array(10)
+            {Array(12)
               .fill("/bosch.jpeg")
               .map((src, i) => (
                 <div
                   key={i}
-                  className="flex-shrink-0 w-40 h-16 flex justify-center items-center"
+                  className="flex-shrink-0 w-28 sm:w-40 h-12 sm:h-16 flex justify-center items-center"
                 >
                   <img
                     src={src}
                     alt="Bosch"
-                    className="h-16 w-auto object-contain transition"
+                    className="h-10 sm:h-16 w-auto object-contain transition"
                   />
                 </div>
               ))}
@@ -303,9 +382,7 @@ export default function LosNietosLanding() {
               <div className="flex justify-center mb-4">
                 <Icon className="text-green-600" size={48} />
               </div>
-              <h4 className="text-xl font-semibold mb-3 text-black">
-                {title}
-              </h4>
+              <h4 className="text-xl font-semibold mb-3 text-black">{title}</h4>
               <p className="text-neutral-700 text-sm">{desc}</p>
             </Card>
           ))}
